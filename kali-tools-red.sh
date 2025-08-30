@@ -40,13 +40,13 @@ sudo apt install -y \
   python3-pip
 
 echo "🐍 Installing Scrapy (required for ReconSpider)..."
-pip3 install scrapy
+pip3 install scrapy --break-system-packages
 
 echo "Download a script that builds a directory structure for a pentest project."
-wget https://github.com/Stormshadowshellfire/PentestStruct/blob/main/Penstruct.sh -O ~/Penstruct.sh
+wget https://raw.githubusercontent.com/Stormshadowshellfire/PentestStruct/refs/heads/main/Penstruct.sh -O ./Penstruct.sh
 
 echo "📁 Cloning useful GitHub repositories..."
-mkdir -p ~/redteam-tools && cd ~/redteam-tools
+mkdir -p ./redteam-tools && cd ./redteam-tools
 
 git clone https://github.com/danielmiessler/SecLists
 git clone https://github.com/thewhiteh4t/FinalRecon
