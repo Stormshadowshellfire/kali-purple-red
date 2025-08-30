@@ -42,6 +42,9 @@ sudo apt install -y \
 echo "🐍 Installing Scrapy (required for ReconSpider)..."
 pip3 install scrapy
 
+echo "Download a script that builds a directory structure for a pentest project."
+wget https://github.com/Stormshadowshellfire/PentestStruct/blob/main/Penstruct.sh -O ~/Penstruct.sh
+
 echo "📁 Cloning useful GitHub repositories..."
 mkdir -p ~/redteam-tools && cd ~/redteam-tools
 
@@ -53,10 +56,12 @@ git clone https://github.com/smicallef/spiderfoot
 git clone https://github.com/CiscoCXSecurity/rdp-sec-check
 
 echo "📥 Downloading standalone scripts..."
-wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh -O LinEnum.sh
-chmod +x LinEnum.sh
+mkdir -p ./Livenum
+wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh -O ./Livenum/LinEnum.sh
+chmod +x ./Livenum/LinEnum.sh
 
-wget https://raw.githubusercontent.com/JoelGMSec/Invoke-Stealth/main/Invoke-Stealth.ps1 -O Invoke-Stealth.ps1
+mkdir -p ./Stealth
+wget https://raw.githubusercontent.com/JoelGMSec/Invoke-Stealth/main/Invoke-Stealth.ps1 -O ./Stealth/Invoke-Stealth.ps1
 
 echo "📦 Downloading ReconSpider (without execution)..."
 wget -O ReconSpider.zip https://academy.hackthebox.com/storage/modules/144/ReconSpider.v1.2.zip
